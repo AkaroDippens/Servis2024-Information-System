@@ -1,0 +1,54 @@
+﻿<Page x:Class="Servis_2024.Pages.ApplicationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Servis_2024.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ApplicationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="243*"/>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="56*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="202*"/>
+            <ColumnDefinition Width="236*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="DataGrid" Style="{DynamicResource DataGridStyle}" IsReadOnly="True" Margin="62,10,0,0" Background="Transparent" FontSize="15" BorderBrush="black" BorderThickness="2" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="4" Height="212" VerticalAlignment="Top" HorizontalAlignment="Left" Width="676"/>
+
+
+        <Button x:Name="addButton" Style="{DynamicResource ButtonCRUDStyle}" Content="Добавить" Margin="0,0,20,38" Click="Add" HorizontalAlignment="Right" Width="105" Height="34" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button x:Name="editButton" Style="{DynamicResource ButtonCRUDStyle}" Content="Изменить" Margin="0,0,20,3" HorizontalAlignment="Right" Width="106" Height="34" VerticalAlignment="Bottom" Click="Update" Grid.Row="1"/>
+        <Button x:Name="deleteButton" Style="{DynamicResource ButtonCRUDStyle}" Content="Удалить" Margin="45,0,0,0" Grid.Row="2" HorizontalAlignment="Left" Width="106" Height="34" VerticalAlignment="Center" Click="Delete"/>
+        <Button x:Name="exportButton" Style="{DynamicResource ButtonCRUDStyle}" Margin="0,7,16,0" Grid.Row="3" HorizontalAlignment="Right" Width="114" Grid.RowSpan="2" Height="43" VerticalAlignment="Top" Click="ExportToCSV">
+            <TextBlock FontSize="15" Foreground="White" Text="Экспортировать в CSV" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+
+        <TextBlock x:Name="dateTextBlock" Style="{DynamicResource GeneralText}" Text="Дата создания" Margin="35,0,36,39" TextAlignment="Center" Grid.Column="1" Height="29" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <TextBox x:Name="create_date" Style="{DynamicResource inputStyle}" Margin="0,46,0,0" Grid.Column="1" Height="26" VerticalAlignment="Top" HorizontalAlignment="Center" Width="164" Grid.Row="1"/>
+
+        <TextBlock x:Name="statusTextBlock" Style="{DynamicResource GeneralText}" Text="Статус заявки" Margin="41,13,41,0" TextAlignment="Center" Grid.Column="2" Height="29" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBox x:Name="status" Style="{DynamicResource inputStyle}" Margin="0,46,0,0" Grid.Column="2" Height="26" VerticalAlignment="Top" HorizontalAlignment="Center" Width="164" Grid.Row="1"/>
+
+        <TextBlock x:Name="TechTextBlock" Style="{DynamicResource GeneralText}" Text="Техник" Margin="84,13,84,0" TextAlignment="Center" Grid.Column="3" Height="29" VerticalAlignment="Top" Grid.Row="1"/>
+        <ComboBox x:Name="comboTechnician" Style="{DynamicResource comboBoxStyle}" Grid.Column="3" Margin="0,44,0,0" HorizontalAlignment="Center" Width="164" Height="23" VerticalAlignment="Top" Grid.Row="1" />
+
+        <TextBlock x:Name="ClientTextBlock" Style="{DynamicResource GeneralText}" Text="Клиент" Margin="75,0,75,0" TextAlignment="Center" Grid.Column="3" Height="29" VerticalAlignment="Center" Grid.Row="2"/>
+        <ComboBox x:Name="comboClient" Style="{DynamicResource comboBoxStyle}" Margin="0,5,0,0" Grid.Column="3" HorizontalAlignment="Center" Width="164" Height="26" VerticalAlignment="Top" Grid.Row="3"/>
+
+        <TextBlock x:Name="executeDateTextBlock" Style="{DynamicResource GeneralText}" Text="Дата и время вып..." Margin="19,0,2,0" TextAlignment="Center" Grid.Column="1" Grid.Row="2" Height="28" VerticalAlignment="Center"/>
+        <TextBox x:Name="execute_date" Style="{DynamicResource inputStyle}" Grid.Column="1" Grid.Row="3" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Width="164"/>
+
+        <TextBlock x:Name="commentTextBlock" Style="{DynamicResource GeneralText}" Text="Комментарии и доп.." Margin="14,0,5,0" TextAlignment="Center" Grid.Column="2" Grid.Row="2" Height="28" VerticalAlignment="Center"/>
+        <TextBox x:Name="comment" Style="{DynamicResource inputStyle}" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" Width="164" Height="26" VerticalAlignment="Center"/>
+
+    </Grid>
+</Page>

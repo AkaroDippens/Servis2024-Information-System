@@ -1,0 +1,15 @@
+﻿<Application x:Class="Servis_2024.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Servis_2024"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="Inter">pack://application:,,,/StyleLibrary;component/Fonts/#Inter</FontFamily>
+            <ResourceDictionary.MergedDictionaries>
+                <!--ПОДКЛЮЧЕНИЕ СЛОВАРЯ РЕСУРСОВ С НЕСКОЛЬКИМИ СЛОВАРЯМИ-->
+                <ResourceDictionary Source="Style.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
